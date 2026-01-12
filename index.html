@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Liminal Space Explorer</title>
+    
+    <!-- Google Fonts: Inter (Sans) & Merriweather (Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        // Substack-inspired palette
+                        stone: {
+                            50: '#F9FAFB',  // Very light grey/white background
+                            100: '#F3F4F6',
+                            200: '#E5E7EB',
+                            800: '#1F2937', // Dark grey text
+                            900: '#111827', // Almost black
+                        },
+                        accent: '#FF6719', // The orange from your logo/brand
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #ffffff; color: #1F2937; }
+        
+        /* Smooth interactions */
+        .episode-card { transition: all 0.2s ease-out; }
+        .episode-card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
+        .episode-card.hidden { display: none; }
+        
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Typography tweaks */
+        h1, h2, h3, h4, .filter-btn { font-family: 'Inter', sans-serif; }
+        p, .prose { font-family: 'Merriweather', serif; }
+    </style>
+</head>
+<body class="min-h-screen selection:bg-orange-100 selection:text-orange-900">
+
+    <!-- Header Section -->
+    <header class="bg-white border-b border-gray-100 pt-8 pb-6">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            
+            <!-- LOGO IMAGE -->
+            <!-- Ensure your file is named exactly this and sits next to the HTML file -->
+            <img src="Liminal Space Pod (Presentation).png" 
+                 alt="The Liminal Space" 
+                 class="h-24 md:h-32 mx-auto mb-4 object-contain">
+            
+            <p class="text-gray-500 text-lg md:text-xl font-serif italic max-w-2xl mx-auto leading-relaxed">
+                Exploring the intersections of systems change, human behavior, and the spaces in between.
+            </p>
+        </div>
+    </header>
+
+    <!-- ESSAY / MAIN ANALYSIS SECTION -->
+    <section class="max-w-7xl mx-auto px-4 py-12 bg-gray-50 border-b border-gray-100">
+        
+        <!-- Intro Text -->
+        <div class="max-w-3xl mx-auto text-center mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 tracking-tight">Three Ways Into The Liminal Space</h2>
+            <p class="text-gray-600 leading-relaxed text-lg">
+                Across these episodes, the podcast keeps returning to the threshold, not as a detour, but as a discipline. 
+                The show treats the “in-between” as a real place—one where systems can be questioned, where bodies can be re-inhabited, and where inherited stories can be handled with more honesty than certainty.
+            </p>
+        </div>
+
+        <!-- The 3 Categories Grid -->
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+            
+            <!-- Category 1 -->
+            <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-gray-300 transition-colors relative group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-stone-400 rounded-t-xl"></div>
+                <div class="mb-4">
+                    <span class="text-xs font-bold tracking-widest uppercase text-stone-500">Category 1</span>
+                    <h3 class="text-xl font-bold text-gray-900 mt-2">Living the Threshold</h3>
+                    <p class="text-sm text-gray-500 mt-1 font-sans">Liminality, rest, reflection, grounding</p>
+                </div>
+                <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                    Episodes where the “liminal space” isn’t just a theme, but a posture. Moments where you step back and treat pausing as part of the work.
+                </p>
+                <ul class="space-y-2">
+                    <li><a href="https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Start-here-e2fvkrv" target="_blank" class="text-sm font-bold text-accent hover:underline decoration-2 underline-offset-2">Start Here &rarr;</a></li>
+                    <li><a href="https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Learning-from-stories-in-The-Liminal-Space-with-Rashid-and-Tristan-e2np870" target="_blank" class="text-sm font-bold text-accent hover:underline decoration-2 underline-offset-2">Learning from Stories &rarr;</a></li>
+                    <li><a href="https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/What-grounds-us-and-reflections-on-stories-changing-systems-with-Rashid-and-Tristan-e33h65b" target="_blank" class="text-sm font-bold text-accent hover:underline decoration-2 underline-offset-2">What Grounds Us &rarr;</a></li>
+                    <li><a href="https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Bonus-What-Took-Root-During-Our-Hibernation-with-Tristan-and-Rashid-e3cqa0r" target="_blank" class="text-sm font-bold text-accent hover:underline decoration-2 underline-offset-2">Bonus: Hibernation &rarr;</a></li>
+                </ul>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-gray-300 transition-colors relative group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-accent rounded-t-xl"></div>
+                <div class="mb-4">
+                    <span class="text-xs font-bold tracking-widest uppercase text-accent">Category 2</span>
+                    <h3 class="text-xl font-bold text-gray-900 mt-2">Coming Home</h3>
+                    <p class="text-sm text-gray-500 mt-1 font-sans">Embodiment, belonging, community</p>
+                </div>
+                <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                    A return to body, community, and place—with all the complexity of a colonial city. Belonging as a practice.
+                </p>
+                <ul class="space-y-2">
+                    <li><a href="https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Belonging-in-our-bodies-and-the-world-with-Thami-James-and-Zach-Stewart-e2kahcd" target="_blank" class="text-sm font-bold text-accent hover:underline decoration-2 underline-offset-2">Belonging in Our Bodies &rarr;</a></li>
+                    <li><a href="https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/What-happens-when-we-reclaim-our-stories-and-find-home-in-our-bodies--With-Bongeka-and-Aphiwe-e2vg05e" target="_blank" class="text-sm font-bold text-accent hover:underline decoration-2 underline-offset-2">Reclaiming Stories &rarr;</a></li>
+                    <li><a href="https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Reorienting-ourselves-toward-community-and-building-new-capabilities-with-Leila-Kidson-e31tevd" target="_blank" class="text-sm font-bold text-accent hover:underline decoration-2 underline-offset-2">Reorienting to Community &rarr;</a></li>
+                    <li><a href="https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Kinship--assimilation-and-making-home-in-the-colonial-city-with-Charlie-Alexander-and-Barry-Lewis-e2meccp" target="_blank" class="text-sm font-bold text-accent hover:underline decoration-2 underline-offset-2">Kinship & Assimilation &rarr;</a></li>
+                </ul>
+            </div>
+
+            <!-- Category 3 -->
+            <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-gray-300 transition-colors relative group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gray-800 rounded-t-xl"></div>
+                <div class="mb-4">
+                    <span class="text-xs font-bold tracking-widest uppercase text-gray-600">Category 3</span>
+                    <h3 class="text-xl font-bold text-gray-900 mt-2">Remaking the World</h3>
+                    <p class="text-sm text-gray-500 mt-1 font-sans">Story, imagination, hope, systems</p>
+                </div>
+                <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                    Story as an engine: the thing that frames reality, contests domination, and opens up new possibilities.
+                </p>
+                <ul class="space-y-2">
+                    <li><a href="https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Can-stories-change-systems--with-Tristan-and-Rashid-e2rkig5" target="_blank" class="text-sm font-bold text-accent hover:underline decoration-2 underline-offset-2">Can Stories Change Systems? &rarr;</a></li>
+                    <li><a href="https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Systems-Thinking-and-rehumanising-narratives-with-Ncedisa-Nkonyeni-e2u6tu6" target="_blank" class="text-sm font-bold text-accent hover:underline decoration-2 underline-offset-2">Systems Thinking &rarr;</a></li>
+                    <li><a href="https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Critical-hope-and-being-human-with-Ashley-Visagie-and-Helene-Rousseau-e2ip83o" target="_blank" class="text-sm font-bold text-accent hover:underline decoration-2 underline-offset-2">Critical Hope &rarr;</a></li>
+                    <li><a href="https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Brown-Jesus-and-the-liberation-of-Moses-with-Thandi-Gamedze-e2hlvd3" target="_blank" class="text-sm font-bold text-accent hover:underline decoration-2 underline-offset-2">Brown Jesus & Liberation &rarr;</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Conclusion -->
+        <div class="max-w-4xl mx-auto bg-white border border-gray-200 p-8 rounded-lg text-center shadow-sm">
+            <h4 class="font-bold text-gray-900 mb-4 uppercase tracking-widest text-xs">The Through-line</h4>
+            <p class="text-gray-700 font-serif italic text-lg">
+                "You make a threshold — you slow down enough to notice what’s true. <br class="hidden md:block">
+                You return to home — body, place, people, ancestry, identity. <br class="hidden md:block">
+                You begin re-authoring reality — hope with teeth, imagination with grounding."
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Filter Bar (Sticky) -->
+    <div class="bg-white border-y border-gray-200 sticky top-0 z-30">
+        <div class="max-w-6xl mx-auto px-4 py-4 overflow-x-auto">
+            <div id="filter-container" class="flex flex-wrap md:justify-center justify-start gap-2 min-w-max md:min-w-0">
+                <button onclick="filterEpisodes('all')" class="filter-btn active px-4 py-2 rounded-full text-xs font-bold transition-all border border-gray-200 bg-white text-gray-500 hover:border-gray-400 hover:text-gray-900 uppercase tracking-wide">
+                    All Episodes
+                </button>
+                <!-- JavaScript will inject other buttons here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content: Full Archive Grid -->
+    <main class="max-w-6xl mx-auto px-4 py-16">
+        <div class="flex justify-between items-end mb-8 border-b border-gray-100 pb-4">
+            <h2 class="text-2xl font-bold text-gray-900 tracking-tight">Full Archive</h2>
+            <span id="episode-count" class="text-gray-400 text-xs font-bold uppercase tracking-widest">16 Episodes</span>
+        </div>
+
+        <div id="grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+            <!-- JavaScript will inject cards here -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="hidden text-center py-20">
+            <p class="text-xl text-gray-400">No episodes found for this category.</p>
+            <button onclick="filterEpisodes('all')" class="mt-4 text-gray-800 font-bold underline">View all episodes</button>
+        </div>
+    </main>
+
+    <footer class="text-center py-12 text-gray-400 text-sm border-t border-gray-100 bg-gray-50">
+        <p>&copy; 2026 The Liminal Space Podcast.</p>
+    </footer>
+
+    <!-- LOGIC -->
+    <script>
+        // --- DATA MAPPING ---
+        
+        // I have set the 'image' field to your logo file for now.
+        const defaultImage = "Liminal Space Pod (Presentation).png";
+
+        const episodes = [
+            {
+                id: 16,
+                title: "Bonus: What Took Root During Our Hibernation",
+                desc: "A brief reflection on the 'hibernation' period at the end of 2025. Seeds of possibility germinating underground, slow-cooking collaborations.",
+                link: "https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Bonus-What-Took-Root-During-Our-Hibernation-with-Tristan-and-Rashid-e3cqa0r", 
+                themes: ["Liminality", "Rest & Grounding", "Story & Systems", "Community"],
+                image: defaultImage
+            },
+            {
+                id: 15,
+                title: "What Grounds Us & Reflections on Stories Changing Systems",
+                desc: "Reflecting on Season 2. Discussing self-analysis, creative energy, and stories that ground us during the winter season.",
+                link: "https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/What-grounds-us-and-reflections-on-stories-changing-systems-with-Rashid-and-Tristan-e33h65b",
+                themes: ["Rest & Grounding", "Liminality", "Hope & Imagination", "Rehumanising", "Creative Arts"],
+                image: defaultImage
+            },
+            {
+                id: 14,
+                title: "Rehumanising Stories with Abduragman Adams",
+                desc: "Award-winning actor Abduragman Adams on refusing limiting scripts. Delving into the power of dreaming as survival and the 'dreamspace'.",
+                link: "https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Rehumanising-stories-from-the-screen--stage-and-dreamspace-with-Abduragman-Adams-e33h59u",
+                themes: ["Creative Arts", "Hope & Imagination", "Rehumanising", "Story & Systems"],
+                image: defaultImage
+            },
+            {
+                id: 13,
+                title: "Reorienting Ourselves Toward Community",
+                desc: "Leila Kidson on intersectional feminism and integrating grassroots voices. Reorienting towards goodness held together by story.",
+                link: "https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Reorienting-ourselves-toward-community-and-building-new-capabilities-with-Leila-Kidson-e31tevd",
+                themes: ["Community", "Story & Systems", "Decoloniality", "Hope & Imagination"],
+                image: defaultImage
+            },
+            {
+                id: 12,
+                title: "Re-membering Fragments of Heritage",
+                desc: "Ra-eesha and Taahirah explore identity and revolutionary love on the Cape Flats. Grappling with heritage fragments in the colonial city.",
+                link: "https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Re-membering-the-fragments-of-our-heritage-and-identity-in-the-colonial-city-with-Ra-eesha-and-Taahirah-e30orf4",
+                themes: ["Heritage & Identity", "Place & City", "Creative Arts", "Decoloniality", "Embodiment", "Rehumanising"],
+                image: defaultImage
+            },
+            {
+                id: 11,
+                title: "Reclaiming Stories & Finding Home in Bodies",
+                desc: "Bongeka and Aphiwe discuss yoga, music, and finding a safe space in a not-so-safe place. Coming home to our bodies as part of systems change.",
+                link: "https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/What-happens-when-we-reclaim-our-stories-and-find-home-in-our-bodies--With-Bongeka-and-Aphiwe-e2vg05e",
+                themes: ["Embodiment", "Community", "Rehumanising", "Rest & Grounding", "Spirituality", "Creative Arts"],
+                image: defaultImage
+            },
+            {
+                id: 10,
+                title: "Systems Thinking and Rehumanising Narratives",
+                desc: "Ncedisa Nkonyeni guides us through systems thinking and how story is interwoven in the work. Discussing complexity, joy, and music.",
+                link: "https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Systems-Thinking-and-rehumanising-narratives-with-Ncedisa-Nkonyeni-e2u6tu6",
+                themes: ["Story & Systems", "Rehumanising", "Rest & Grounding", "Creative Arts", "Hope & Imagination"],
+                image: defaultImage
+            },
+            {
+                id: 9,
+                title: "Can Fantasy & Deep Hope Create a New World?",
+                desc: "Nicole Joshua on 'Deep Hope', the Sacred Feminine, and learning from fantasy realms (LOTR) to shape our reality against oppressive powers.",
+                link: "https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Can-Fantasy--Deep-Hope--and-the-Sacred-Feminine-create-a-new-world--With-Nicole-Joshua-e2sopnp",
+                themes: ["Spirituality", "Hope & Imagination", "Story & Systems", "Embodiment", "Creative Arts"],
+                image: defaultImage
+            },
+            {
+                id: 8,
+                title: "Can Stories Change Systems?",
+                desc: "Tristan and Rashid grapple with the power of storytelling to shape culture. What happens when certain narratives dominate?",
+                link: "https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Can-stories-change-systems--with-Tristan-and-Rashid-e2rkig5",
+                themes: ["Story & Systems", "Hope & Imagination", "Creative Arts", "Liminality", "Decoloniality"],
+                image: defaultImage
+            },
+            {
+                id: 7,
+                title: "Learning from Stories in The Liminal Space",
+                desc: "A reflection on Season 1. Connecting dots between episodes, the rehumanising power of music, and the value of staying in the liminal space.",
+                link: "https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Learning-from-stories-in-The-Liminal-Space-with-Rashid-and-Tristan-e2np870",
+                themes: ["Liminality", "Rest & Grounding", "Rehumanising", "Hope & Imagination", "Creative Arts", "Place & City", "Heritage & Identity"],
+                image: defaultImage
+            },
+            {
+                id: 6,
+                title: "Kinship, Assimilation & Making Home",
+                desc: "Charlie Alexander and Barry Lewis on home, belonging, and the legacy of colonization in Cape Town. Asking questions that shape solutions.",
+                link: "https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Kinship--assimilation-and-making-home-in-the-colonial-city-with-Charlie-Alexander-and-Barry-Lewis-e2meccp",
+                themes: ["Decoloniality", "Place & City", "Community", "Story & Systems", "Hope & Imagination"],
+                image: defaultImage
+            },
+            {
+                id: 5,
+                title: "The Sweet Waters of Heritage & Identity",
+                desc: "Nadia Agherdine and Waseela Everson from the Salt River Heritage Society. Exploring green spaces, public art, and the complexity of identity.",
+                link: "https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/The-sweet-waters-of-heritage-and-identity-with-Nadia-Agherdine-and-Waseela-Everson-e2lc969",
+                themes: ["Heritage & Identity", "Place & City", "Community", "Decoloniality"],
+                image: defaultImage
+            },
+            {
+                id: 4,
+                title: "Belonging in Our Bodies and the World",
+                desc: "Thami James and Zach Stewart. Finding healing in a disembodied world by coming home to our bodies. Immersive soundscapes and gathering over food.",
+                link: "https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Belonging-in-our-bodies-and-the-world-with-Thami-James-and-Zach-Stewart-e2kahcd",
+                themes: ["Embodiment", "Creative Arts", "Rehumanising", "Rest & Grounding", "Hope & Imagination"],
+                image: defaultImage
+            },
+            {
+                id: 3,
+                title: "Critical Hope and Being Human",
+                desc: "Ashley Visagie and Helene Rousseau. Discussing 'Critical Hope' vs naive optimism, and youth as co-constructors of the world.",
+                link: "https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Critical-hope-and-being-human-with-Ashley-Visagie-and-Helene-Rousseau-e2ip83o",
+                themes: ["Hope & Imagination", "Decoloniality", "Community", "Story & Systems", "Heritage & Identity"],
+                image: defaultImage
+            },
+            {
+                id: 2,
+                title: "Brown Jesus and the Liberation of Moses",
+                desc: "Thandi Gamedze on the liberative potential of 'Brown Jesus', decolonisation, and the story of Moses. Includes original poetry.",
+                link: "https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Brown-Jesus-and-the-liberation-of-Moses-with-Thandi-Gamedze-e2hlvd3",
+                themes: ["Decoloniality", "Spirituality", "Creative Arts", "Rest & Grounding", "Hope & Imagination", "Story & Systems"],
+                image: defaultImage
+            },
+            {
+                id: 1,
+                title: "Start Here: The Vision",
+                desc: "Rashid and Tristan introduce the podcast as a liminal space. Why remaining in the in-between can spur imagination for a better world.",
+                link: "https://podcasters.spotify.com/pod/show/theliminalspacepod/episodes/Start-here-e2fvkrv",
+                themes: ["Liminality", "Hope & Imagination", "Story & Systems", "Place & City", "Creative Arts"],
+                image: defaultImage
+            }
+        ];
+
+        // --- APP LOGIC ---
+
+        const grid = document.getElementById('grid-container');
+        const filterContainer = document.getElementById('filter-container');
+        const emptyState = document.getElementById('empty-state');
+        const countDisplay = document.getElementById('episode-count');
+
+        function init() {
+            generateFilterButtons();
+            renderCards('all');
+        }
+
+        function generateFilterButtons() {
+            const allThemes = new Set();
+            episodes.forEach(ep => ep.themes.forEach(t => allThemes.add(t)));
+            const sortedThemes = Array.from(allThemes).sort();
+
+            sortedThemes.forEach(theme => {
+                const btn = document.createElement('button');
+                btn.innerText = theme;
+                // Using updated style for buttons
+                btn.className = `filter-btn whitespace-nowrap px-4 py-2 rounded-full text-xs font-bold transition-all border border-gray-200 bg-white text-gray-500 hover:border-gray-400 hover:text-gray-900 uppercase tracking-wide`;
+                btn.onclick = () => filterEpisodes(theme);
+                filterContainer.appendChild(btn);
+            });
+        }
+
+        function filterEpisodes(selectedTheme) {
+            const buttons = document.querySelectorAll('#filter-container button');
+            buttons.forEach(btn => {
+                // Reset style
+                btn.className = `filter-btn whitespace-nowrap px-4 py-2 rounded-full text-xs font-bold transition-all border border-gray-200 bg-white text-gray-500 hover:border-gray-400 hover:text-gray-900 uppercase tracking-wide`;
+                
+                // Active style
+                if (btn.innerText === selectedTheme || (selectedTheme === 'all' && btn.innerText === 'All Episodes')) {
+                    btn.className = `filter-btn whitespace-nowrap px-4 py-2 rounded-full text-xs font-bold transition-colors bg-gray-900 text-white shadow-md ring-2 ring-gray-900 ring-offset-2 uppercase tracking-wide`;
+                }
+            });
+            renderCards(selectedTheme);
+        }
+
+        function renderCards(filter) {
+            grid.innerHTML = '';
+            let count = 0;
+
+            episodes.forEach((ep) => {
+                if (filter === 'all' || ep.themes.includes(filter)) {
+                    count++;
+                    const card = document.createElement('div');
+                    
+                    const tagHTML = ep.themes.map(t => 
+                        `<span class="inline-block bg-gray-100 text-gray-600 text-[10px] px-2 py-1 rounded font-bold tracking-wider uppercase mr-1 mb-1 border border-gray-200">${t}</span>`
+                    ).join('');
+
+                    card.className = "episode-card fade-in bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col h-full";
+
+                    card.innerHTML = `
+                        <!-- Episode Image (Clickable Link) -->
+                        <a href="${ep.link}" target="_blank" class="block h-48 overflow-hidden bg-gray-100 border-b border-gray-100 relative group">
+                             <img src="${ep.image}" alt="${ep.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                             <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-5 transition-opacity"></div>
+                        </a>
+                        
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="mb-4">${tagHTML}</div>
+                            <h3 class="text-xl font-bold text-gray-900 leading-tight mb-3 tracking-tight">
+                                <a href="${ep.link}" target="_blank" class="hover:text-accent transition-colors">${ep.title}</a>
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-6 flex-grow leading-relaxed font-serif line-clamp-3">${ep.desc}</p>
+                            <a href="${ep.link}" target="_blank" class="inline-block w-full text-center py-3 rounded-lg border border-gray-200 bg-white text-gray-700 text-xs font-bold hover:bg-gray-50 hover:border-gray-300 transition-colors uppercase tracking-widest">
+                                Listen / View
+                            </a>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                }
+            });
+
+            countDisplay.innerText = `${count} Episode${count !== 1 ? 's' : ''}`;
+            
+            if (count === 0) emptyState.classList.remove('hidden');
+            else emptyState.classList.add('hidden');
+        }
+
+        init();
+    </script>
+</body>
+</html>
