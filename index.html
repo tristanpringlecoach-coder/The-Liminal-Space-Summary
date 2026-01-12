@@ -340,6 +340,36 @@
         function init() {
             generateFilterButtons();
             renderCards('all');
+            // Try to auto-fetch images if they are still the default
+            fetchMetadataImages();
+        }
+
+        // --- NEW FUNCTION TO AUTO-FETCH IMAGES ---
+        async function fetchMetadataImages() {
+            const cards = document.querySelectorAll('.episode-card');
+            
+            cards.forEach(async (card) => {
+                const img = card.querySelector('img');
+                const link = card.querySelector('a').href; // The link to the episode
+                
+                // Only try to fetch if it's currently showing the default logo
+                if (img.src.includes(encodeURIComponent(defaultImage)) || img.src.endsWith(defaultImage)) {
+                    try {
+                        // Using Microlink API free tier
+                        const apiUrl = `https://api.microlink.io/?url=${encodeURIComponent(link)}&palette=true&embed=image.url`;
+                        
+                        const response = await fetch(apiUrl);
+                        const text = await response.text();
+                        
+                        // If the API returns a URL (and not an error), update the image
+                        if (text && text.startsWith('http')) {
+                            img.src = text;
+                        }
+                    } catch (error) {
+                        console.log("Could not fetch image for", link);
+                    }
+                }
+            });
         }
 
         function generateFilterButtons() {
